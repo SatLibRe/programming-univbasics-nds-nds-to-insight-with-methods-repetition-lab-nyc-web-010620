@@ -84,22 +84,19 @@ total = 0
   total 
 end 
 
-# def directors_totals(source)
-#   director_hash = {}
-#     source.each do |key,value|
-#       total = 0
-#         key[:movies].each do |movie_obj|
-#         total += movie_obj[:worldwide_gross]
-#           director_hash[key[:name]] = total 
-#       end 
-#     end 
-#   director_hash
-# end
-
 def directors_totals(source)
-  directors_hash = {}
-    directors_hash[list_of_directors(source)] = gross_for_director(source)
-end 
+  director_hash = {}
+    source.each do |key,value|
+      total = 0
+        key[:movies].each do |movie_obj|
+        total += movie_obj[:worldwide_gross]
+          director_hash[key[:name]] = total 
+      end 
+    end 
+  director_hash
+end
+
+
 
 
 
